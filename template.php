@@ -71,7 +71,7 @@ function isActive($p){
             <span class="sr-only">Toggle navigation</span>
             <span data-icon="plus" class="spr-2x" style="color:#fc0;"></span>
           </button>
-          <a class="navbar-brand" href="./"><span class="spr" data-icon="icons.svg#home"></span><span style="opacity:.7; font-weight:normal">spr</span><span style="font-weight:bold;">icons</span></a>
+          <a class="navbar-brand" href="./"><span class="spr" data-icon="svg/spricons/action-symbol.svg#home"></span><span style="opacity:.7; font-weight:normal">spr</span><span style="font-weight:bold;">icons</span></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
