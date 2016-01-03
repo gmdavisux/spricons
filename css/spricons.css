@@ -38,7 +38,7 @@ svg.spr{
 /* list icons */
 .spr-ul {
   padding-left: 0;
-  margin-left: 2.14285714em;
+  margin-left: 2em;
   list-style-type: none;
 }
 .spr-ul > li {
@@ -46,15 +46,15 @@ svg.spr{
 }
 
 .spr-li svg.spr{
+    position: relative;
+/*    right: 6px;*/
+    right:.5rem;
   width: 1em;
   margin-left: -1em;
 }
-.spr-li.spr-lg  svg.spr{
-  left: -1.85714286em;
-}
 
 /* border icons */
-.spr-border svg {
+.spr-border svg.spr {
   padding: .05em;
   border: solid 0.08em #eeeeee;
   border-radius: .1em;
@@ -75,7 +75,7 @@ svg.spr{
   -webkit-animation: spr-spin 2s infinite linear;
   animation: spr-spin 2s infinite linear;
 }
-.spr-pulse {
+.spr-pulse svg.spr{
   -webkit-animation: spr-spin 1s infinite steps(8);
   animation: spr-spin 1s infinite steps(8);
 }
@@ -97,6 +97,34 @@ svg.spr{
   100% {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
+  }
+}
+.spr-spin-ccw svg.spr{
+  -webkit-animation: spr-spin-ccw 2s infinite linear;
+  animation: spr-spin-ccw 2s infinite linear;
+}
+.spr-pulse-ccw svg.spr{
+  -webkit-animation: spr-spin-ccw 1s infinite steps(8);
+  animation: spr-spin-ccw 1s infinite steps(8);
+}
+@-webkit-keyframes spr-spin-ccw {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-359deg);
+    transform: rotate(-359deg);
+  }
+}
+@keyframes spr-spin-ccw {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-359deg);
+    transform: rotate(-359deg);
   }
 }
 .spr-rotate-90  svg.spr{

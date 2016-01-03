@@ -75,7 +75,7 @@ function isActive($p){
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="<?=isActive('index.php')?>"><a href="#">Icons <span class="sr-only">(current)</span></a></li>
+            <li class="<?=isActive('index.php')?>"><a href="index.php">Icons <span class="sr-only">(current)</span></a></li>
             <li class="<?=isActive('start.php')?>"><a href="start.php">Getting started</a></li>
             <li class="<?=isActive('ico.php')?>"><a href="ico.php">Examples</a></li>
             <li class="<?=isActive('license.php')?>"><a href="license.php">License</a></li>
