@@ -48,7 +48,7 @@ function isActive($p){
           li.mag {height: 3em; white-space: nowrap; display: block; padding: 1em 0;}
           li.mag a{display: block;}
           li.mag a:hover{text-decoration: none;}
-        li.mag a:hover svg.spr {
+        li.mag:hover svg.spr {
             position: relative;
             width: 2em;
             height: 2em;
@@ -71,11 +71,11 @@ function isActive($p){
             <span class="sr-only">Toggle navigation</span>
             <span data-icon="plus" class="spr-2x" style="color:#fc0;"></span>
           </button>
-          <a class="navbar-brand" href="./"><span class="spr" data-icon="icons.svg#home"></span><span style="opacity:.7; font-weight:normal">spr</span><span style="font-weight:bold;">icons</span></a>
+          <a class="navbar-brand" href="./"><span class="spr" data-icon="svg/spricons/action-symbol.svg#home"></span><span style="opacity:.7; font-weight:normal">spr</span><span style="font-weight:bold;">icons</span></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="<?=isActive('index.php')?>"><a href="#">Icons <span class="sr-only">(current)</span></a></li>
+            <li class="<?=isActive('index.php')?>"><a href="index.php">Icons <span class="sr-only">(current)</span></a></li>
             <li class="<?=isActive('start.php')?>"><a href="start.php">Getting started</a></li>
             <li class="<?=isActive('ico.php')?>"><a href="ico.php">Examples</a></li>
             <li class="<?=isActive('license.php')?>"><a href="license.php">License</a></li>

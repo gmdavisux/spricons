@@ -6,8 +6,20 @@ function fName($str, $del, $arr){
     $result = array_diff($pcs, $arr);
     $fname = implode($pcs, ' ');
 }
+
+function shortname($fname){
+//gets the simplified file name
+    $filewords=array('symbol', 'svg', 'sprite');
+    $pcs = explode('-', $fname);
+    $result = array_diff($pcs, $filewords);
+    return implode(' ', $result);
+}
+
 function showIcons($file) {
 //    creates the page showing all icons in a sprite
+    $path=pathinfo($file);
+    $fname=$path['filename'];
+    $fam=end(explode("/", $path['dirname'])); // family name
     if (file_exists($file)) {
         $xml = simplexml_load_file($file);
 //        print_r($xml); //->symbol['0']['id']
@@ -22,10 +34,14 @@ function showIcons($file) {
             $result = array_diff($pcs, $idwords);
             $fid = implode(' ', $result);
 
-            $filewords=array('symbol.svg', 'svg', 'sprite');
-            $pcs = explode('-', $file);
-            $result = array_diff($pcs, $filewords);
-            $ffile = implode(' ', $result);
+            $path = pathinfo($file);
+
+//            $filewords=array('symbol.svg', 'svg', 'sprite');
+//            $pcs = explode('-', $file);
+//            $result = array_diff($pcs, $filewords);
+//            print_r($result);
+//            $ffile = implode(' ', $result);
+            $ffile = $fam." ".shortname($fname);
 
             $html.='
               <li class="mag spr-li col-sm-6 col-xs-12 col-md-4 col-lg-3">

@@ -4,8 +4,8 @@
  * Copyright 2015-2016 Gary M. Davis
 */
 
-svg{width: 100%; height: 100%;}
 svg.spr{
+    width: 100%; height: 100%;
     display: inline-block;
     fill: currentColor;
     vertical-align: middle;
@@ -14,68 +14,65 @@ svg.spr{
     transform: translate(0, 0);
 }
 /* makes the icon 33% larger relative to it's container */
-.spr-lg svg {
+.spr-lg>svg.spr {
   font-size: 1.33333333em;
   line-height: 0.75em;
 }
-.spr-2x svg {
+.spr-2x>svg.spr {
   font-size: 2em;
 }
-.spr-3x svg {
+.spr-3x>svg.spr {
   font-size: 3em;
 }
-.spr-4x svg {
+.spr-4x>svg.spr {
   font-size: 4em;
 }
-.spr-5x svg {
+.spr-5x>svg.spr {
   font-size: 5em;
 }
-.spr-fw svg {
-  width: 1.28571429em;
-  text-align: center;
+.spr-fw>svg.spr {
+    margin:0 .2em;
 }
 
 /* list icons */
 .spr-ul {
   padding-left: 0;
-  margin-left: 2.14285714em;
+  margin-left: 2em;
   list-style-type: none;
 }
 .spr-ul > li {
   position: relative;
 }
 
-.spr-li svg.spr{
-  width: 1em;
-  margin-left: -1em;
-}
-.spr-li.spr-lg  svg.spr{
-  left: -1.85714286em;
+.spr-li>svg.spr{
+    position: relative;
+    right: 6px; /* < ie9 */
+    right:.5rem; /* modern browsers */
+    width: 1em;
+    margin-left: -1em;
 }
 
 /* border icons */
-.spr-border svg {
+.spr-border>svg.spr {
   padding: .05em;
   border: solid 0.08em #eeeeee;
   border-radius: .1em;
 }
-.pull-right {
-  float: right;
+.spr-pull-right>svg.spr{
+    display: inline-block;
+    float: right;
+    margin-left: .3em;
+
 }
-.pull-left {
-  float: left;
+.spr-pull-left>svg.spr{
+    float: left;
+    margin-right: .3em;
 }
-.fa.pull-left {
-  margin-right: .3em;
-}
-.fa.pull-right {
-  margin-left: .3em;
-}
-.spr-spin svg.spr{
+.spr-spin>svg.spr{
   -webkit-animation: spr-spin 2s infinite linear;
   animation: spr-spin 2s infinite linear;
 }
-.spr-pulse {
+.spr-pulse>svg.spr{
   -webkit-animation: spr-spin 1s infinite steps(8);
   animation: spr-spin 1s infinite steps(8);
 }
@@ -99,31 +96,59 @@ svg.spr{
     transform: rotate(359deg);
   }
 }
-.spr-rotate-90  svg.spr{
+.spr-spin-ccw>svg.spr{
+  -webkit-animation: spr-spin-ccw 2s infinite linear;
+  animation: spr-spin-ccw 2s infinite linear;
+}
+.spr-pulse-ccw>svg.spr{
+  -webkit-animation: spr-spin-ccw 1s infinite steps(8);
+  animation: spr-spin-ccw 1s infinite steps(8);
+}
+@-webkit-keyframes spr-spin-ccw {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-359deg);
+    transform: rotate(-359deg);
+  }
+}
+@keyframes spr-spin-ccw {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-359deg);
+    transform: rotate(-359deg);
+  }
+}
+.spr-rotate-90 >svg.spr{
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-.spr-rotate-180 svg.spr{
+.spr-rotate-180>svg.spr{
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-.spr-rotate-270  svg.spr{
+.spr-rotate-270 >svg.spr{
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
-.spr-flip-horizontal  svg.spr{
+.spr-flip-horizontal >svg.spr{
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
-.spr-flip-vertical  svg.spr{
+.spr-flip-vertical >svg.spr{
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
@@ -149,25 +174,32 @@ svg.spr{
     position: absolute;
     left: 0;
 }
-.spr-stack-1x svg.spr,
-.spr-stack-2x svg.spr {
+.spr-stack-1x>svg.spr,
+.spr-stack-2x>svg.spr {
 position: relative;
 /*    text-align: center;*/
 /*    vertical-align: center;*/
 /*    display: block;*/
     margin: auto;
 }
-.spr-stack-1x svg.spr {
+.spr-stack-1x>svg.spr {
   font-size:1em;
-  line-height: inherit;
-    width:100%;
+    width: 100%;
 }
 .spr-stack-2x svg.spr{
   font-size: 2em;
-/*
-    width:200%;
-    height: 200%;
-*/
+}
+.spr-stack.spr-lg{
+    font-size: 1.33em;
+}
+.spr-stack.spr-2x{
+    font-size: 2em;
+}
+.spr-stack.spr-3x{
+    font-size: 3em;
+}
+.spr-stack.spr-4x{
+    font-size: 4em;
 }
 .spr-inverse {
   color: #ffffff;
