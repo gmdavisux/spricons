@@ -3,6 +3,13 @@ if(!$_GET['i']){$_GET['i']='home';}
 if(!$_GET['f']){$_GET['f']='svg/spricons/action-symbol.svg';}
 $currentIcon=$_GET['f'].'#'.$_GET['i'];
 $title=$_GET['i'].' icon at spricons.com';
+
+function codify($str){
+    $str=str_replace('    ', '  ', $str);
+    $str=nl2br(htmlentities($str));
+    return $str;
+}
+
 $content.='
     <div class="jumbotron">
       <div class="container" style="background-color:#fff; border-bottom:#ccc;">
@@ -282,7 +289,7 @@ $content.=$str.'
 </p>
                     <div class="well">
                         <code class="prettyprint">';
-    $content.=nl2br(htmlentities($str)).'
+    $content.=codify($str).'
                         </code>
                     </div>
                 </div>

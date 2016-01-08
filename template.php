@@ -48,7 +48,7 @@ function isActive($p){
           li.mag {height: 3em; white-space: nowrap; display: block; padding: 1em 0;}
           li.mag a{display: block;}
           li.mag a:hover{text-decoration: none;}
-        li.mag a:hover svg.spr {
+        li.mag:hover svg.spr {
             position: relative;
             width: 2em;
             height: 2em;

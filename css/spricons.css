@@ -4,8 +4,8 @@
  * Copyright 2015-2016 Gary M. Davis
 */
 
-svg.spr{width: 100%; height: 100%;}
 svg.spr{
+    width: 100%; height: 100%;
     display: inline-block;
     fill: currentColor;
     vertical-align: middle;
